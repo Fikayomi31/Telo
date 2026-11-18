@@ -1,0 +1,40 @@
+# Core
+Django>=5.2,<6.0
+djangorestframework>=3.15
+djangorestframework-simplejwt>=5.3
+django-cors-headers>=4.4
+django-filter>=24.3
+drf-spectacular>=0.27
+
+# Config
+python-dotenv>=1.0
+dj-database-url>=2.2
+
+# Database
+psycopg2-binary>=2.9
+
+# Background jobs
+celery>=5.4
+redis>=5.0
+
+# Files and images
+Pillow>=10.4
+
+# AI / computer vision
+# MediaPipe works best on Python 3.10 to 3.12
+mediapipe>=0.10
+opencv-python-headless>=4.9
+numpy
+scikit-learn>=1.5
+
+# Production
+gunicorn>=22.0
+whitenoise>=6.7
+
+# Photo storage (optional, enable in settings when ready)
+# cloudinary
+# django-cloudinary-storage
+
+# Testing
+pytest>=8.0
+pytest-django>=4.8
