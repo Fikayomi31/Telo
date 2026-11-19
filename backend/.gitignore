@@ -3,4 +3,5 @@ __pycache__/
 /venv/
 .pytest_cache/
 .env
-/instance/
+*.py[cod]
+db.sqlite3
