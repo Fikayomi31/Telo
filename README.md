@@ -2,8 +2,6 @@
 
 A web app that lets customers get their body measurements from photos, with no account needed, and share them with a tailor near them. Tailors log in to view and confirm the measurements, then create a contract that sets when the cloth will be ready.
 
-
-
 ## The Problem
 
 Taking body measurements for tailored clothes usually needs a visit to the tailor. This project lets the customer capture measurements from home using their phone, and lets the tailor review them before starting work.
