@@ -26,3 +26,26 @@ class VendorProfile(models.Model):
 
     def __str__(self):
         return self.business_name
+
+
+class VendorLocation(models.Model):
+
+    vendor = models.ForeignKey(VendorProfile, on_delete=models.CASCADE, related_name="location")
+    country = models.CharField(max_length=100, default="Nigeria")
+    state = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+    lga = models.CharField(max_length=50, blank=True)
+    street_address = models.CharField(max_length=255)
+
+    latitude = models.DecimalField(max_digits=9, decimal_places=6, validators=[MinValueValidator(-90), MaxValueValidator(90)])
+    longitude = models.DecimalField(max_digits=9, decimal_places=6, validators=[MinValueValidator(-180), MaxValueValidator(180)])
+
+    is_primary = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-is_primary", "city"]
+
+    def __str__(self):
+        return f"{self.vendor.business_name} - {self.city}"
+
