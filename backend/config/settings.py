@@ -48,6 +48,14 @@ INSTALLED_APPS = [
 
     # Local applications
     'apps.accounts',
+    'apps.customers',
+    'apps.designs',
+    'apps.measurements',
+    'apps.notifications',
+    'apps.orders',
+    'apps.tracking',
+    'apps.vendors',
+
 ]
 
 MIDDLEWARE = [
@@ -93,6 +101,7 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT'),
     }
 }
+
 
 AUTH_USER_MODEL = "accounts.User"
 
