@@ -11,9 +11,9 @@ class VendorProfile(models.Model):
         VERIFIED = "VERIFIED", "verified"
         REJECTED = "REJECTED", "Rejected"
 
-    owner = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="vendor profile")
+    owner = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="vendor_profile")
     business_name = models.CharField(max_length=150)
-    description = models.TextChoices(blank=True)
+    description = models.TextField(blank=True)
     business_email = models.EmailField(blank=True)
     business_phone = models.CharField(max_length=11)
     logo = models.ImageField(upload_to="vendors/logos/", blank=True, null=True)

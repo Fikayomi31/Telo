@@ -27,7 +27,7 @@ class Measurement(models.Model):
 
     unit = models.CharField(max_length=5, choices=Unit.choices, default=Unit.INCH)
     source = models.CharField(max_length=10, choices=Source.choices, default=Source.AI)
-    ai_confidence = models.DecimalField(max_length=5, decimal_places=2, null=True, blank=True, validators=[MinValueValidator(0), MaxValueValidator(100)])
+    ai_confidence = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True, validators=[MinValueValidator(0), MaxValueValidator(100)])
     is_verified = models.BooleanField(default=False)
     notes = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

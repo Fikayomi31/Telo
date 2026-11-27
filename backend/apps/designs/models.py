@@ -38,10 +38,10 @@ class CustomerPhoto(models.Model):
         BACK = "BACK", "Back View"
         OTHER = "OTHER" "Other View"
 
-    vendor_customer = models.ForeignKey("customer.VendorCustomer", on_delete=models.CASCADE, related_name="photos")
+    vendor_customer = models.ForeignKey("customers.VendorCustomer", on_delete=models.CASCADE, related_name="photos")
     uploaded_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="uploaded_customer_phones")
     image = models.ImageField(upload_to="customer_photos/")
-    photo_type = models.CharField(max_length=10, choices=PhotoType.choices, default=PhotoType.FRONT)
+    photo_type = models.CharField(max_length=15, choices=PhotoType.choices, default=PhotoType.FRONT)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
