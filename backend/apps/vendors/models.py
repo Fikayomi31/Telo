@@ -74,7 +74,7 @@ class VendorService(models.Model):
 
     class Meta:
         ordering = ["name"]
-        constraints = [models.UniqueConstraint(fields=["vendors", "name"], name="unique_vendor_service_name")]
+        constraints = [models.UniqueConstraint(fields=["vendor", "name"], name="unique_vendor_service_name")]
 
     def __str__(self):
         return f"{self.name} - {self.vendor.business_name}"
