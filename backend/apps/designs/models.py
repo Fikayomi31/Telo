@@ -47,7 +47,7 @@ class CustomerPhoto(models.Model):
     def __str__(self):
         return f'Photo of {self.vendor_customer.customer.full_name}'
 
-class TryOnResult(models.Model)
+class TryOnResult(models.Model):
 
     class Status(models.TextChoices):
         PENDING = "PENDING", "Pending"
