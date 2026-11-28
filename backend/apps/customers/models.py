@@ -18,7 +18,7 @@ class VendorCustomer(models.Model):
 
     vendor = models.ForeignKey("vendors.VendorProfile", on_delete=models.CASCADE, related_name="customer_relationships")
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name="vendor_relationships")
-    creatd_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="registered_customers")
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="registered_customers")
     private_notes = models.TextField(blank=True)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
