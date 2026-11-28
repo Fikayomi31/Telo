@@ -157,3 +157,13 @@ JAZZMIN_SETTINGS = {
     "copyright": "Telo",
     "show_ui_builder": True,  # Enables live theme customizer button in the admin UI
 }
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
