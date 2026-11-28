@@ -11,4 +11,5 @@ urlpatterns = [
     path("login/", TailorLoginView.as_view(), name="tailor-login"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token-refresh"),
     path("me/", TailorProfileView.as_view(), name="tailor-profile"),
+    
 ]
