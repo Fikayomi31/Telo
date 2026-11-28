@@ -1,9 +1,10 @@
 from rest_framework import generics
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.generics import RetrieveAPIView
 
-from .serializers import TailorRegistrationSerializer, TailorLoginSerializer
+from .serializers import TailorRegistrationSerializer, TailorLoginSerializer, TailorProfileSerializer
 
 
 class TailorRegistrationView(generics.CreateAPIView):
@@ -20,3 +21,10 @@ class TailorLoginView(generics.GenericAPIView):
 
         return Response(serializer.validated_data, status=status.HTTP_200_OK)
 
+class TailorProfileView(RetrieveAPIView):
+    serializer_class = TailorProfileSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
+    
