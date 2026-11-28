@@ -57,10 +57,10 @@ class OrderStatusHistoryAdmin(admin.ModelAdmin):
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
 
-    list_display = ("order", "amount", "method", "status", "transaction_reference", "paid_at")
-    list_filter = ("method", "status", "paid_at")
+    list_display = ("order", "amount", "payment_method", "status", "transaction_reference", "paid_at")
+    list_filter = ("payment_method", "status", "paid_at")
     search_fields = ("transaction_reference", "order__vendor_customer__customer__full_name")
 
     readonly_fields = ("created_at",)
-    
+
 
